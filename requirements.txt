@@ -1,0 +1,5 @@
+camel-tools==1.1.0
+funcy==1.15
+pipdeptree==2.0.0
+pymarc==4.0.0
+wheel==0.36.2

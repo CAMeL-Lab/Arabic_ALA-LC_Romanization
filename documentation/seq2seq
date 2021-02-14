@@ -1,0 +1,18 @@
+source: https://github.com/alishazal/seq2seq-transliteration-tool
+
+default epochs: 40
+
+specifc to setting up on nyu abu dhabi's hpc (dalma)
+- first load:
+module load miniconda
+module load gcc
+- then create and activate environment:
+conda create --name seq2seq python=3.6
+conda activate seq2seq
+- then install required modules
+pip3 install camel-tools
+pip3 install tensorflow-gpu==1.4
+
+
+
+

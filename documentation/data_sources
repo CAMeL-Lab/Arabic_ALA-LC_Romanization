@@ -1,0 +1,34 @@
+Contents:
+1) Overview of the catalogue records used in this project 
+2) Basic info on MARC data structure and extraction
+-----
+
+1) Catalogue records:
+    a) Arabic Collections Online (ACO):
+        - source: https://github.com/NYULibraries/aco-karms/
+        - date accessed: 
+        - note: * records are within a complex hierarchy inside folders called /marcxml_out/
+                * paths to records: /work/*/*/marcxml_out/*.xml
+        - license: unlicense 
+
+    b) University of Michigan:
+        - source: https://old.datahub.io/dataset/umich-marc-records-cc0
+        - date accessed: 
+        - total records: 1,315,695
+        - license: cc0
+
+    c) Library of Congress 2016:
+        - source: https://www.loc.gov/cds/products/MDSConnect-books_all.html
+        - date accessed: 
+        - total records: ~25 million
+        - license: Public domain (please cite LOC)
+
+* Note that resource (a) stores each catalogue record in individual marc_xml files, while (b) and (c) contain marc_xml collections with thousands of records each.
+
+
+2) MARC manual: https://www.loc.gov/marc/bibliographic/bd880.html 
+- In the MARC standard, Arabic information is stored in the field: "880 - Alternate Graphic Representation."
+- The 880 field is linked to the main entry fields using subfield "6 - Linkage."
+
+
+

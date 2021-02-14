@@ -1,0 +1,12 @@
+Info on MADAMIRA:
+- see usermanual
+
+- database used is almor-msa-s31.db (see manual p6 for more info):
+
+Info on Buckwalter Part-of-Speech tags: 
+- see ATB-POSGuidelines
+
+Note on Running MADAMIRA and Java requirements
+- MADAMIRA will not run on versions of Java above 9
+- This project was run on openjdk64-1.8.0.272.  You can install it using `brew install --cask adoptopenjdk8`, or download from the website: https://adoptopenjdk.net/ (!make sure to select jdk8)
+- If you want to maintain a separate java environment for this project, you can learn about setting up jENV here: https://www.jenv.be/, otherwise you may have to completely uninstall your other versions.

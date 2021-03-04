@@ -6,20 +6,21 @@ Contents:
 1) Catalogue records:
     a) Arabic Collections Online (ACO):
         - source: https://github.com/NYULibraries/aco-karms/
-        - date accessed: 
+        - date accessed: Jan 20, 2021
         - note: * records are within a complex hierarchy inside folders called /marcxml_out/
                 * paths to records: /work/*/*/marcxml_out/*.xml
         - license: unlicense 
 
     b) University of Michigan:
-        - source: https://old.datahub.io/dataset/umich-marc-records-cc0
-        - date accessed: 
+        - (Broken-link) source: https://old.datahub.io/dataset/umich-marc-records-cc0
+        - (Broken-link) source: http://www.lib.umich.edu/open-access-bibliographic-records
+        - date accessed: Jan 20, 2021
         - total records: 1,315,695
         - license: cc0
 
     c) Library of Congress 2016:
         - source: https://www.loc.gov/cds/products/MDSConnect-books_all.html
-        - date accessed: 
+        - date accessed: Jan 20, 2021
         - total records: ~25 million
         - license: Public domain (please cite LOC)
 

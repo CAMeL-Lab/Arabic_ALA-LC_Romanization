@@ -13,15 +13,15 @@
 
 ### Basic dependencies
 This project was developed using python 3.6, and tested in macOS and linux environments.  First you must install required packages:
-`pip3 install -r requirements.txt`
+> pip3 install -r requirements.txt
 
 ### MADAMIRA
 
-To run the MADAMIRA morphological analyser and disambiguator, you must have a MADAMIRA distribution in the project directory, which you can obtain from [here](http://innovation.columbia.edu/technologies/cu14012_arabic-language-disambiguation-for-natural-language-processing-applications)
+To run the MADAMIRA morphological analyser and disambiguator, you must have a MADAMIRA distribution in the project directory, which you can obtain from [here](http://innovation.columbia.edu/technologies/cu14012_arabic-language-disambiguation-for-natural-language-processing-applications).
 
 
 The database used is almor-msa-s31.db (see `documentation/MADAMIRA-UserManual` p6 for more info).  If you have access to this database, you must have the database file inside `MADAMIRA/resources/` and setup the MADAMIRA config file located in `MADAMIRA/config/almor.properties` as follows:
-- `ALMOR.text.MSA.database.name=almor-s31.db`
+> `ALMOR.text.MSA.database.name=almor-s31.db`
 
 
 For info on the Buckwalter Part-of-Speech tag set used by MADAMIRA, see `/documentation/ATB-POSGuidelines-v3.7.pdf`
@@ -35,7 +35,7 @@ For info on the Buckwalter Part-of-Speech tag set used by MADAMIRA, see `/docume
 
 To run the Seq2Seq model, you must obtain a copy of Shazal & Usman's [Seq2Seq Transliteration Tool](https://github.com/alishazal/seq2seq-transliteration-tool).
 
-`git clone https://github.com/alishazal/seq2seq-transliteration-tool.git seq2seq`
+> git clone https://github.com/alishazal/seq2seq-transliteration-tool.git seq2seq
 
 We ran our seq2seq systems with the GPU NVIDIA Tesla V100 PCIe 32 GB on NYU Abu Dhabi's High Performance Computing cluster, known as Dalma. We set the memory flag to 30GB. The .sh scripts that we ran can be seen in the file folder `/src/train/seq2seq_scripts/`.
 
@@ -51,15 +51,15 @@ Unless you are interested in exploring the source MARCxml dumps, or would like t
 #### Data Sources
 
 Arabic Collections Online (ACO):
-`git clone https://github.com/NYULibraries/aco-karms/ data/raw_records/aco/`
+> git clone https://github.com/NYULibraries/aco-karms/ data/raw_records/aco/
 
 Library of Congress (LOC): 
-`for val in {01..43}; do wget -nc -P data/raw_records/loc https://www.loc.gov/cds/downloads/MDSConnect/BooksAll.2016.part$$val.xml.gz; done  
-gunzip data/raw_records/loc/*`
+> for val in {01..43}; do wget -nc -P data/raw_records/loc https://www.loc.gov/cds/downloads/MDSConnect/BooksAll.2016.part$$val.xml.gz; done  
+> gunzip data/raw_records/loc/*
 
 University of Michigan (UMICH):
-`wget -nc -P data/raw_records/umich http://www.lib.umich.edu/files/umich_bib.xml.gz
-gunzip data/raw_records/umich/*`
+> wget -nc -P data/raw_records/umich http://www.lib.umich.edu/files/umich_bib.xml.gz
+> gunzip data/raw_records/umich/*
 
 ## Running Arabic ALA-LC Romanization models
 

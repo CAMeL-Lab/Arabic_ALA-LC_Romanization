@@ -9,7 +9,7 @@
 - [Fadhl Eryani](https://github.com/fadhleryani/)
 - Nizar Habash
 
-## Setup Dependencies
+## Setup
 
 ### Basic dependencies
 This project was developed using python 3.6, and tested in macOS and linux environments.  First you must install required packages:
@@ -20,7 +20,7 @@ This project was developed using python 3.6, and tested in macOS and linux envir
 To run the MADAMIRA morphological analyser and disambiguator, you must have a MADAMIRA distribution in the project directory, which you can obtain from [here](http://innovation.columbia.edu/technologies/cu14012_arabic-language-disambiguation-for-natural-language-processing-applications).
 
 
-The database used is almor-msa-s31.db (see `documentation/MADAMIRA-UserManual` p6 for more info).  If you have access to this database, you must have the database file inside `MADAMIRA/resources/` and setup the MADAMIRA config file located in `MADAMIRA/config/almor.properties` as follows:
+The database used is almor-msa-s31.db (see `documentation/MADAMIRA-UserManual` p6 for more info).  If you have access to this database, place the database file inside `MADAMIRA/resources/` and setup the MADAMIRA config file located in `MADAMIRA/config/almor.properties` by updating the following flag:
 > `ALMOR.text.MSA.database.name=almor-s31.db`
 
 
@@ -29,7 +29,7 @@ For info on the Buckwalter Part-of-Speech tag set used by MADAMIRA, see `/docume
 #### MADAMIRA and Java requirements
 - MADAMIRA will not run on versions of Java above 9
 - We used openjdk64-1.8.0.272.  You can install it using `brew install --cask adoptopenjdk8`, or download from the website: https://adoptopenjdk.net/ (make sure to select jdk8)
-- We recommend you setup java using [JENV](here: https://www.jenv.be/)
+- We recommend you setup java using [JENV](https://www.jenv.be/)
 
 ### Seq2Seq
 

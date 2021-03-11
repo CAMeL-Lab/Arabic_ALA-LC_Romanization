@@ -71,7 +71,7 @@ def main():
     ### train
     parser_train = subparsers.add_parser('train',add_help=True,help='train mle or seq2seq model')
     
-    train_subparsers = parser_train.add_subparsers(help='Model',dest='train',required=True,metavar='model')
+    train_subparsers = parser_train.add_subparsers(help='Model',dest='train',metavar='model')
     # mle
     parser_train_mle = train_subparsers.add_parser('mle',help='trains mle model')
     parser_train_mle.add_argument('input',nargs='?',help='input tsv containing clean parallel lines with columns "ar" and "rom" for source and gold',
@@ -91,7 +91,7 @@ def main():
     ### predict
     parser_predict = subparsers.add_parser('predict',add_help=True,help='Predict romanization',)
     # init predict_subparser
-    predict_subparsers = parser_predict.add_subparsers(help='Prediction Model',dest='model',required=True,metavar='model')
+    predict_subparsers = parser_predict.add_subparsers(help='Prediction Model',dest='model',metavar='model')
     # translit_simple
     parser_predict_translit_simple = predict_subparsers.add_parser('simple', add_help=True,help='Apply Simple Rules')
     parser_predict_translit_simple.add_argument('input',default='dev',nargs='?',help='dev, test, or path to tsv containing a column "ar" for source lines')

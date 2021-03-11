@@ -416,11 +416,12 @@ def main():
         predictions = ar_lines.apply(lambda x: translit_simple(x,locmap,locexceptional))
 
     elif args.mode == 'morph':
-        try:
-            analyse_input_path = f'{project_dir}/data/processed_for_madamira/analyser_input/{setname}.xml'
-            analyse_output_path = f'{project_dir}/data/processed_for_madamira/analyser_output/{setname}.xml'
-        except:
-            print("ensure expected directory structure for storing analyser xmls") #TODO: fix this so it checks and creates automatically
+        Path(f'{project_dir}/data/processed_for_madamira/analyser_input').mkdir(parents=True,exist_ok=True)
+        Path(f'{project_dir}/data/processed_for_madamira/analyser_output').mkdir(parents=True,exist_ok=True)
+        
+        analyse_input_path = f'{project_dir}/data/processed_for_madamira/analyser_input/{setname}.xml'
+        analyse_output_path = f'{project_dir}/data/processed_for_madamira/analyser_output/{setname}.xml'
+        
 
         if not args.dont_reanalyse:  #TODO: change this to see if analyse_output_path exists and ask if reanalysis is necessary
             # tokenize to make ready for config file

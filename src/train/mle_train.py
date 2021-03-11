@@ -99,8 +99,9 @@ def main():
         logging.info(f'train size_ratio: {size}')
 
   
-        outpath = f'{args.output}train_size{size}.tsv'
+        outpath = f'{args.output}size{size}.tsv'
 
+        Path(args.output).mkdir(parents=True,exist_ok=True)
 
         traindf = load_traindf(path=args.input)
 

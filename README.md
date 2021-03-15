@@ -100,12 +100,14 @@ or simply run `make data_set`
 
 ## Running Arabic ALA-LC Romanization models
 
-This section describes how to run the various prediction models we report on in [publication](#publication)
+This section describes how to run the various prediction models we report on in [publication](#publication).
 By default, predictions are run on the dev set, but you can replace the `dev` argument with `test` or a path to any tsv file containing an input column labelled `ar`.
 
 ### 1. Rules Simple
 
-The baseline model Romanizes any input Arabic text based on the regex rules mapped in `src/predict/ar2phon/ar2phon_map.tsv` and handles exceptional spellings mapped in `src/predict/ar2phon/loc_exceptional_spellings.tsv`.
+The baseline model Romanizes any input Arabic text based on 
+- the regex rules mapped in `src/predict/ar2phon/ar2phon_map.tsv`
+- exceptional spellings mapped in `src/predict/ar2phon/loc_exceptional_spellings.tsv`.
 
 > python3 src/loc_transcribe.py predict simple dev
 

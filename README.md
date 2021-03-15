@@ -100,7 +100,7 @@ or simply run `make data_set`
 
 ## Running Arabic ALA-LC Romanization models
 
-This section describes how to run the various prediction models we report on in [publication](# publication)
+This section describes how to run the various prediction models we report on in [publication](#publication)
 By default, predictions are run on the dev set, but you can replace the `dev` argument with `test` or a path to any tsv file containing an input column labelled `ar`.
 
 ### 1. Rules Simple

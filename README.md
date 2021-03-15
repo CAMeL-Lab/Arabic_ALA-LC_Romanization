@@ -53,7 +53,7 @@ Data for this project came from publicly available catalog databases stored in t
 
 ### Downloading Data
 
-Catalog data in MARC xml format were downloaded from the following sources.  To re-download the sources used in this project, run each of the following commands:
+Catalog data in MARC xml format were downloaded from the following sources.  To re-download the sources used in this project, simply run `make download_data`, or run each of the following commands:
 
 Arabic Collections Online (ACO):
 > git clone https://github.com/NYULibraries/aco-karms/ data/raw_records/aco/
@@ -70,7 +70,7 @@ or simply run `make download_data`
 
 ### Collecting Arabic Records
 
-The first step is to create new marcxml collections containing only Arabic records from each data source.
+The first step is to read our MARC records from each data source and collect records tagged as Arabic into new marcxml collections.
 
 UMICH and LOC are comprised of large marcxml collections containing thousands of records per file.
 
@@ -100,6 +100,7 @@ or simply run `make data_set`
 
 ## Running Arabic ALA-LC Romanization models
 
+This section describes how to run the various prediction models we report on in [publication](# publication)
 By default, predictions are run on the dev set, but you can replace the `dev` argument with `test` or a path to any tsv file containing an input column labelled `ar`.
 
 ### 1. Rules Simple

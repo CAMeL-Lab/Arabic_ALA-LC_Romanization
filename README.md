@@ -1,9 +1,12 @@
 # Arabic ALA-LC Romanization Tool
 
-<!-- ## Publication
+A tool and dataset for the automatic Romanization of Arabic text in the ALA-LC Romanization standard.
 
-[Automatic Romanization of Arabic Bibliographic Records]() -->
+## Publication
 
+[Eryani, Fadhl & Nizar Habash.  Automatic Romanization of Arabic Bibliographic Records. Proceedings of the Sixth Arabic Natural Language Processing Workshop. 2021 (pre-print).](https://arxiv.org/pdf/2103.07199.pdf)
+
+![Example record with parallel entries along with combined MARC field and subfield tags](LOC-Entry.pdf)
 ## Authors
 
 - [Fadhl Eryani](https://github.com/fadhleryani/)
@@ -42,7 +45,7 @@ We ran our seq2seq systems with the GPU NVIDIA Tesla V100 PCIe 32 GB on NYU Abu 
 
 ## Data
 
-Data for this project came from publicly available catalog databases stored in the [MARC (machine-readable cataloging) standard](https://www.loc.gov/marc/bibliographic/) xml format.  If you are only interested in replicating our experimental setup, you only need the provided tsvs in `data/processed` and can skip this section.  Read on for details on downloading the original marcxml dumps, collection of Arabic records, preprocessing and splits.
+Data for this project came from publicly available catalog databases stored in the [MARC (machine-readable cataloging) standard](https://www.loc.gov/marc/bibliographic/) xml format.  If you are only interested in replicating our experimental setup, you only need the provided tsvs located in `data/processed` and can skip this section.  Read on for details on downloading the original marcxml dumps, collection of Arabic records, preprocessing and splits.
 
 ### Downloading Data
 

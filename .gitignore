@@ -6,7 +6,7 @@
 /reports/*
 /seq2seq/*
 
-!data/processed
+# !data/processed
 !.gitignore
 !*.gitkeep
 !src/*

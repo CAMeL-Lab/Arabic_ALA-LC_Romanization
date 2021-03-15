@@ -2,12 +2,14 @@
 
 A tool and dataset for the automatic Romanization of Arabic text in the ALA-LC Romanization standard.
 
+Example of Arabic source and target Romanization with MARC field/subfield tag and tag description (see [publication](https://arxiv.org/pdf/2103.07199.pdf) for more details).
+<img src="LOC-Entry.png" alt="Example record with parallel entries along with combined MARC field and subfield tags" width="50%" height="50%">
+Source: Arabic Collections Online: http://hdl.handle.net/2333.1/m37pvs4b
+
 ## Publication
 
 [Eryani, Fadhl & Nizar Habash.  Automatic Romanization of Arabic Bibliographic Records. Proceedings of the Sixth Arabic Natural Language Processing Workshop. 2021 (pre-print).](https://arxiv.org/pdf/2103.07199.pdf)
 
-<img src="LOC-Entry.png" alt="Example record with parallel entries along with combined MARC field and subfield tags" width="50%" height="50%">
-Source: Arabic Collections Online: http://hdl.handle.net/2333.1/m37pvs4b
 ## Authors
 
 - [Fadhl Eryani](https://github.com/fadhleryani/)

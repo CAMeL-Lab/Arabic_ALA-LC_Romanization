@@ -6,7 +6,7 @@ A tool and dataset for the automatic Romanization of Arabic text in the ALA-LC R
 
 [Eryani, Fadhl & Nizar Habash.  Automatic Romanization of Arabic Bibliographic Records. Proceedings of the Sixth Arabic Natural Language Processing Workshop. 2021 (pre-print).](https://arxiv.org/pdf/2103.07199.pdf)
 
-![Example record with parallel entries along with combined MARC field and subfield tags]("/LOC-Entry.pdf")
+![Example record with parallel entries along with combined MARC field and subfield tags](./LOC-Entry.pdf)
 ## Authors
 
 - [Fadhl Eryani](https://github.com/fadhleryani/)

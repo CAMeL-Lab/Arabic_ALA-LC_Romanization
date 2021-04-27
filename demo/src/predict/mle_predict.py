@@ -37,8 +37,10 @@ def apply_mle(sentence,mledict):
 
 def apply_mle_translit_simple_backoff(sentence,mledict,locmap,locexceptional):
     predict_mle = []
-    for tok in tokenize_skiphyph(sentence).split():
+    for tok_index, tok in enumerate(tokenize_skiphyph(sentence).split()):
         mle_tok = mledict.get(tok, translit_rules.translit_simple(tok,locmap,locexceptional))
+        if tok_index == 0:
+            mle_tok = translit_rules.capitalize_loc(mle_tok)
         predict_mle.append(mle_tok)
     return recompose(' '.join(predict_mle),mode='rom')
 

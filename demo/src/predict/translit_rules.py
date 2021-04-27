@@ -170,6 +170,7 @@ def capitalize_loc(word): # for capitalizing hyphen '-' separated words and word
             main_token = ''.join(chars)
         else:
             main_token = main_token.capitalize()
+        split_tokens[-1] = main_token  # this was a silly one
         capitalized = '-'.join(split_tokens)
 
     #for strings with no hyphen
@@ -189,7 +190,7 @@ def translit_simple(sentence,mapdict,exceptional_spelling_dict,logger=rules_logg
     '''translit() + handles exceptional spellings and capitalizes first token of sentence'''
     # capitalize_symbol = '±' # no longer needed as capitalization is done directly
     transliterated = []
-    sentence = str(sentence)
+    sentence = str(sentence) #TODO: proper handling instead of casting
     for tok_index,token in enumerate(sentence.split()):
         # exceptional replacement
         if token in exceptional_spelling_dict:

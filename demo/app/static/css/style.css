@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade&subset=Arabic');
+
+#title-hero {
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8) ), url(../images/background5.jpg);
+    background-position: center;
+    height: 160px;
+}
+
+#input-form {
+    margin: 30px;
+}
+
+table {
+    /* background-color: rgb(215, 246, 250) !important; */
+    margin: auto;
+}
+
+td {
+    text-align: center !important;
+    padding: 0 !important;
+    color: white;
+}
+
+
+.button {
+    height: auto;
+    font-weight: bold;
+    /* font-size: 28px; */
+}
+
+.square {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 5px;
+}
+
+body {
+    font-family: Scheherazade, serif;
+    font-size: 24px;
+}
+
+
+h1 {
+    font-weight:500 !important;
+    /* font-family: Changa; */
+}
+
+#intro-text {
+    margin: 5px;
+}
+
+.footer {
+    background-color: inherit;
+}
+
+.table, #footer, #romanize-button {
+    background-color:#604245;
+}

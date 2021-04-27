@@ -1,0 +1,10 @@
+camel-tools==1.1.0
+Flask-WTF==0.14.3
+funcy==1.15
+gunicorn==20.1.0
+lxml==4.6.2
+pipdeptree==2.0.0
+pymarc==4.0.0
+python-dotenv==0.15.0
+repackage==0.7.3
+wheel==0.36.2

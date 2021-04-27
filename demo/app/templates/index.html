@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Romanize Arabic ALA-LC</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <!-- <link rel="stylesheet" href="../static/css/debug.css"> -->
+	</head>
+	<body onload="pageSetup()">
+    <header>
+        <section id="title-hero" class="hero is-primary">
+            <div class="hero-body">
+                <div class="level" dir="rtl">
+                    <div class="level-item mx-6">
+                        <h1 lang="ar" class="title is-size-1-desktop">
+                            رومنة اللغة العربية ALA-LC
+                        </h1>
+                    </div>
+                    </h2> <br>
+                    <div class="level-item mx-6" style="text-align: left;">
+                        <h1 class="title is-size-1-desktop">
+                            Arabic Romanization ALA-LC
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    
+    <main class="mx-6">
+
+        <div id="error-msg"></div> <!-- TODO: removing this will break script, so fix or remove from here and from script -->
+
+        <section class="level" id="intro-text" dir="rtl">
+            <div class="level-left">   
+                <div class="level-item">
+                    <div class="notification" dir="rtl">
+                        أداة لرومنة الحروف العربية طبقًا لمعايير <b>جمعية المكتبات الأمريكية - مكتبة الكونجرس</b>
+                    </div>
+                </div>
+            </div>
+            <div class="level-right" dir="ltr">   
+                <div class="level-item">
+                    <div class="notification">
+                        A transliteration tool following the <b> American Library Association - Library of Congress</b>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="input-form" class="columns" dir="rtl">
+            <div class="column">
+                <textarea class="textarea" id="input-text" name="input_field" dir="rtl" placeholder="ادخل النص العربي هنا - Input Arabic Text" required="" type="text" value=""></textarea> 
+            </div>                
+            <div class="column">
+                <div class="buttons is-centered">
+                    <div onclick="romanize()" type="button" id="romanize-button" class="button is-info is-medium">
+                        <span class="icon-text">
+                            <span>رَومِن</span><br>
+                            <span class="icon">
+                                <i class="fas fa-angle-double-left"></i>
+                            </span><span class="icon">
+                                <i class="fas fa-angle-double-left"></i>
+                            </span><br>
+                            <span>Romanize</span><br>
+                      </span>
+                    </div>
+                </div>     
+            </div>      
+            <div class="column">
+                <textarea class="textarea" id="output-text" name="output_field" dir="ltr" type="text" value=""></textarea>                                               
+            </div>
+        </section>
+            
+        <section id="input-buttons" class="columns is-centered is-vcentered">
+            <dev class="column is-narrow">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>ى</td>
+                            <td>ع</td>
+                            <td>ء</td>
+                        </tr>
+                        <tr>
+                            <td><input class="button square" type="button" onclick="clickLetter('á')" value="á"></td>
+                            <td><input class="button square" type="button" onclick="clickLetter('ʻ')" value="ʻ"></td>
+                            <td><input class="button square" type="button" onclick="clickLetter('ʼ')" value="ʼ"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </dev>
+            <dev class="column is-narrow">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>اَ</td>
+                            <td>وُ</td>
+                            <td>يِ</td>
+                            <td>ح</td>
+                            <td>ص</td>
+                            <td>ض</td>
+                            <td>ط</td>
+                            <td>ظ</td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" class="button square" onclick="clickLetter('ā')" value="ā"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('ū')" value="ū"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('ī')" value="ī"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('ḥ')" value="ḥ"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('ṣ')" value="ṣ"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('ḍ')" value="ḍ"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('ṭ')" value="ṭ"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('ẓ')" value="ẓ"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" class="button square" onclick="clickLetter('Ā')" value="Ā"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('Ū')" value="Ū"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('Ī')" value="Ī"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('Ḥ')" value="Ḥ"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('Ṣ')" value="Ṣ"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('Ḍ')" value="Ḍ"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('Ṭ')" value="Ṭ"></td>
+                            <td><input type="button" class="button square" onclick="clickLetter('Ẓ')" value="Ẓ"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </dev>
+        </section>
+    </main>
+    <footer class="footer">
+        
+            <div class="container footer-message">
+                <div id="footer" class="notification is-info has-text-left">
+                    This demo is based on the work described in Eryani & Habash (2021)<sup>1</sup>.  For any questions, contact the authors.<br>
+                    <small>[1] Fadhl Eryani & Nizar Habash. <b>"Automatic Romanization of Arabic Bibliographic Records."</b> In Proceedings of the Arabic Natural Language Processing Workshop. 2021.
+                    </small> <a href="https://www.aclweb.org/anthology/2021.wanlp-1.23.pdf"
+                        target="_blank">[PDF]</a> <a href="https://www.aclweb.org/anthology/2021.wanlp-1.23.bib">[BIB]</a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="level">
+                    <div class="level-item"><a
+                            href="https://nyuad.nyu.edu/en/research/centers-labs-and-projects/computational-approaches-to-modeling-language-lab.html"
+                            target="_blank"><img src="../static/images/camel.png" class="footer-logo"></a>
+                    </div>
+                    <div class="level-item"><a 
+                        href="https://nyuad.nyu.edu" 
+                        target="_blank"><img src="../static/images/nyuad.png" class="footer-logo"></a>
+                    </div>
+                </div>
+            </div>
+    </footer>
+	</body>
+    <script>
+        var outputText = document.getElementById("output-text");
+        var inputText = document.getElementById("input-text");
+        function clickLetter(c) {
+            var cursorPosition = outputText.selectionEnd;
+            outputText.focus(); // TODO: maintain current position instead of focusing on the end of text
+            outputText.value = outputText.value.substring(0, outputText.selectionStart) + c + outputText.value.substring(outputText.selectionEnd, outputText.value.length);
+    
+        }
+    
+        function pageSetup() {
+            const node = document.getElementById("input-form");
+            node.addEventListener("keyup", function (event) {
+                if (event.key === "Enter") {
+                    romanize();
+                }
+            });
+        }
+    
+        function romanize() {
+            console.log("romanizing...");
+    
+            var errorMsg = document.getElementById("error-msg");
+            errorMsg.innerHTML = "";
+    
+            txt = inputText.value;
+            console.log(txt);
+    
+            var requestStr = "/romanize?txt=" + encodeURIComponent(inputText.value);
+            console.log(requestStr)
+            console.log(requestStr.length)
+            if (requestStr.length > 1500) {
+                console.log(requestStr.length)
+    
+                errorMsg.innerHTML = "input is too long!";
+                return;
+            }
+    
+            var xhr = new XMLHttpRequest();
+    
+            xhr.open("GET", requestStr, true);
+            xhr.onload = function (e) {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        console.log(xhr.responseText);
+                        outputText.value = xhr.responseText;
+                    } else {
+                        console.error(xhr.statusText);
+                    }
+                }
+            };
+            xhr.onerror = function (e) {
+                console.error(xhr.statusText);
+            };
+            xhr.send(null);
+    
+            // outputText.value = "romanized_string"
+        }
+    </script>
+</html>

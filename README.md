@@ -13,7 +13,9 @@ Source: Arabic Collections Online: http://hdl.handle.net/2333.1/m37pvs4b
 
 ## Demo
 
-Check out this online demo of our MLE Simple model: romanize-arabic.camel-lab.com
+<romanize-arabic.camel-lab.com>
+
+An online demo of our MLE Simple model 
 
 ## Authors
 

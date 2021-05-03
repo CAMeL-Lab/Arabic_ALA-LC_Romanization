@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Scheherazade&subset=Arabic');
 
+
 #title-hero {
     background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8) ), url(../images/background5.jpg);
     background-position: center;
@@ -52,6 +53,7 @@ h1 {
 
 .footer {
     background-color: inherit;
+    font-size: smaller;
 }
 
 .table, #footer, #romanize-button {

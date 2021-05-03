@@ -11,6 +11,10 @@ Source: Arabic Collections Online: http://hdl.handle.net/2333.1/m37pvs4b
 
 - Eryani, Fadhl & Nizar Habash.  [Automatic Romanization of Arabic Bibliographic Records.](https://arxiv.org/pdf/2103.07199.pdf) Proceedings of the Sixth Arabic Natural Language Processing Workshop. 2021 (pre-print).
 
+## Demo
+
+Check out this online demo of our MLE Simple model: romanize-arabic.camel-lab.com
+
 ## Authors
 
 - [Fadhl Eryani](https://github.com/fadhleryani/)

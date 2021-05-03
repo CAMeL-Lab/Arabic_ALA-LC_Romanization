@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width">
 		<title>Romanize Arabic ALA-LC</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
         <link rel="stylesheet" href="../static/css/style.css">
@@ -55,6 +55,11 @@
         <section id="input-form" class="columns" dir="rtl">
             <div class="column">
                 <textarea class="textarea" id="input-text" name="input_field" dir="rtl" placeholder="ادخل النص العربي هنا - Input Arabic Text" required="" type="text" value=""></textarea> 
+                <div class="notification is-small" dir="ltr">
+                    Example 1: <a onclick="fillExample('اعطني الناي وغني')">اعطني الناي وغني</a>
+                    <br>
+                    Example 2: <a onclick="fillExample('اعطِنِي الناي وغني')">اعطِنِي الناي وغني</a>
+                </div>
             </div>                
             <div class="column">
                 <div class="buttons is-centered">
@@ -84,19 +89,6 @@
                             <td>ى</td>
                             <td>ع</td>
                             <td>ء</td>
-                        </tr>
-                        <tr>
-                            <td><input class="button square" type="button" onclick="clickLetter('á')" value="á"></td>
-                            <td><input class="button square" type="button" onclick="clickLetter('ʻ')" value="ʻ"></td>
-                            <td><input class="button square" type="button" onclick="clickLetter('ʼ')" value="ʼ"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </dev>
-            <dev class="column is-narrow">
-                <table class="table">
-                    <tbody>
-                        <tr>
                             <td>اَ</td>
                             <td>وُ</td>
                             <td>يِ</td>
@@ -107,6 +99,9 @@
                             <td>ظ</td>
                         </tr>
                         <tr>
+                            <td><input class="button square" type="button" onclick="clickLetter('á')" value="á"></td>
+                            <td><input class="button square" type="button" onclick="clickLetter('ʻ')" value="ʻ"></td>
+                            <td><input class="button square" type="button" onclick="clickLetter('ʼ')" value="ʼ"></td>
                             <td><input type="button" class="button square" onclick="clickLetter('ā')" value="ā"></td>
                             <td><input type="button" class="button square" onclick="clickLetter('ū')" value="ū"></td>
                             <td><input type="button" class="button square" onclick="clickLetter('ī')" value="ī"></td>
@@ -117,6 +112,9 @@
                             <td><input type="button" class="button square" onclick="clickLetter('ẓ')" value="ẓ"></td>
                         </tr>
                         <tr>
+                            <td><input class="button square" type="button" onclick="clickLetter('á')" value="" disabled></td>
+                            <td><input class="button square" type="button" onclick="clickLetter('ʻ')" value="" disabled></td>
+                            <td><input class="button square" type="button" onclick="clickLetter('ʼ')" value="" disabled></td>
                             <td><input type="button" class="button square" onclick="clickLetter('Ā')" value="Ā"></td>
                             <td><input type="button" class="button square" onclick="clickLetter('Ū')" value="Ū"></td>
                             <td><input type="button" class="button square" onclick="clickLetter('Ī')" value="Ī"></td>
@@ -136,9 +134,9 @@
             <div class="container footer-message">
                 <div id="footer" class="notification is-info has-text-left">
                     This demo is based on the work described in Eryani & Habash (2021)<sup>1</sup>.  For any questions, contact the authors.<br>
-                    <small>[1] Fadhl Eryani & Nizar Habash. <b>"Automatic Romanization of Arabic Bibliographic Records."</b> In Proceedings of the Arabic Natural Language Processing Workshop. 2021.
+                    <small>[1] Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic Bibliographic Records.</cite> In Proceedings of the Arabic Natural Language Processing Workshop. 2021.
                     </small> <a href="https://www.aclweb.org/anthology/2021.wanlp-1.23.pdf"
-                        target="_blank">[PDF]</a> <a href="https://www.aclweb.org/anthology/2021.wanlp-1.23.bib">[BIB]</a>
+                        target="_blank">[PDF]</a> <a href="https://www.aclweb.org/anthology/2021.wanlp-1.23.bib">[BIB]</a> <a href="https://github.com/CAMeL-Lab/Arabic_ALA-LC_Romanization">[Github]</a>
                 </div>
             </div>
             <div class="container">
@@ -164,11 +162,17 @@
             outputText.value = outputText.value.substring(0, outputText.selectionStart) + c + outputText.value.substring(outputText.selectionEnd, outputText.value.length);
     
         }
+
+        function fillExample(c) {
+            inputText.value = c;
+            romanize();
+        }
     
+
         function pageSetup() {
             const node = document.getElementById("input-form");
             node.addEventListener("keyup", function (event) {
-                if (event.key === "Enter") {
+                if (event.key === "Enter" || event.code === "Space") {
                     romanize();
                 }
             });

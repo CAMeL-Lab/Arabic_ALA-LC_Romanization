@@ -64,8 +64,8 @@ def get_main_rep(record,link6):
                 
 
 def parse_marc(record,source,index,):
-    '''returns a pandas dataframe of parallel main/alternative representations contained in a record, skipping badly formed records and subfields.  
-    if skip_bad is False the data frame will have an additional column called "link-error" marking bad entries '''
+    '''returns a pandas dataframe of parallel main/alternative representations contained in a record
+    '''
     parallel = []
     links = get_links6(record)
     for l in links:

@@ -102,6 +102,7 @@ def filter_nonalligned(dfrow):
     ar = str(dfrow['ar'])
     
     rom = recompose(tokenize_skiphyph(rom),mode='rom').split()
+    
     ar = recompose(tokenize_skiphyph(ar),mode='ar').split()
 
     if len(rom)==len(ar):

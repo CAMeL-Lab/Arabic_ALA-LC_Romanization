@@ -13,7 +13,7 @@ Source: Arabic Collections Online: http://hdl.handle.net/2333.1/m37pvs4b
 
 ## Demo
 
-<a href="romanize-arabic.camel-lab.com">romanize-arabic.camel-lab.com</a>
+http://romanize-arabic.camel-lab.com/
 
 An online demo of our MLE Simple model 
 

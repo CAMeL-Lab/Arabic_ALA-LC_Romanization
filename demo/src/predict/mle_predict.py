@@ -38,7 +38,8 @@ def apply_mle(sentence,mledict):
 def apply_mle_translit_simple_backoff(sentence,mledict,locmap,locexceptional):
     predict_mle = []
     for tok_index, tok in enumerate(tokenize_skiphyph(sentence).split()):
-        mle_tok = mledict.get(tok, translit_rules.translit_simple(tok,locmap,locexceptional))
+        mle_tok = mledict.get(tok, translit_rules.translit_simple(tok,locmap,locexceptional,single_word_dont_capitalize=True))
+        
         if tok_index == 0:
             mle_tok = translit_rules.capitalize_loc(mle_tok)
         predict_mle.append(mle_tok)
@@ -119,7 +120,7 @@ def main():
                 print(e)
                 print(sent)
                 print()
-                print(translit_morph_predictions[sent_idx])
+                print(backoff_predictions[sent_idx])
                 exit()
             predictions.append(sent_prediction)
 
@@ -131,7 +132,7 @@ def main():
 
 
 if __name__ == "__main__":
-    log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(level=logging.INFO, format=log_fmt,filename='reports/mle_predict.log',filemode='a')
-
+    # log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    # logging.basicConfig(level=logging.INFO, format=log_fmt,filename='reports/mle_predict.log',filemode='a')
+    
     main()

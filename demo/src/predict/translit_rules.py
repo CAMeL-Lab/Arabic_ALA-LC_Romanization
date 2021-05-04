@@ -186,7 +186,7 @@ def capitalize_loc(word): # for capitalizing hyphen '-' separated words and word
     return capitalized
 
 
-def translit_simple(sentence,mapdict,exceptional_spelling_dict,logger=rules_logger):
+def translit_simple(sentence,mapdict,exceptional_spelling_dict,logger=rules_logger,single_word_dont_capitalize=False):
     '''translit() + handles exceptional spellings and capitalizes first token of sentence'''
     # capitalize_symbol = '±' # no longer needed as capitalization is done directly
     transliterated = []
@@ -198,7 +198,7 @@ def translit_simple(sentence,mapdict,exceptional_spelling_dict,logger=rules_logg
             token = exceptional_spelling_dict[token]
 
         transliterated.append(translit(token,mapdict))
-        if tok_index == 0: # first token
+        if tok_index == 0 and single_word_dont_capitalize == False: # first token
             logger.count_morph_rules(('index-0 capitalize','capitalized'))
             transliterated[-1] = capitalize_loc(transliterated[-1])
     return ' '.join(transliterated)
@@ -207,7 +207,7 @@ def translit_simple(sentence,mapdict,exceptional_spelling_dict,logger=rules_logg
 
 def get_diac(analysis):
     diacritized = []
-    for sent in anlaysis:
+    for sent in analysis:
         for word in sent.words:
             diac_word = sent.analysis[word]['diac']
             diacritized.append(diac_word)
@@ -385,7 +385,7 @@ def main():
     parser.add_argument('input', default='data/processed/dev.tsv', help='path to file containing Arabic lines, must specify -i txt or -i tsv with optional headername, default: -i tsv ar ')
     parser.add_argument('output', help= 'specify output location for predictions')
     parser.add_argument('-i','--input_type', required=True, nargs='+', default=['tsv','ar'], help='options: 1)txt: if file is single column txt file (no header); 2)tsv <optional:input-header>: input is multicolumn tsv.  unless specified, header defaults to "ar"') #TODO: add csv option?
-    parser.add_argument('-m','--mode', required=True, help= 'options: 1)translit_simple: apply rules to raw text without diacritics or morphological information; 2)translit_morph: apply rules to morphologically analyzed text')
+    parser.add_argument('-m','--mode', required=True, help= 'options: 1)simple: apply rules to raw text without diacritics or morphological information; 2)morph: apply rules to morphologically analyzed text')
     parser.add_argument('-da','--dont_reanalyse', action='store_true',help= "don't reanalyse sentences as analysis is already saved")
     parser.add_argument('-l','--log_rules', action='store_true',help= "create a rule freq tsv in reports directory") #TODO: make logger counts optional
     args = parser.parse_args()
@@ -471,7 +471,10 @@ def main():
 if __name__ == "__main__":
     log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     logging.basicConfig(level=logging.INFO, format=log_fmt,filename='reports/translit_rules.log',filemode='a')
+    
 
     main()
+
+
 
     

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Romanize Arabic ALA-LC</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
         <link rel="stylesheet" href="../static/css/style.css">
@@ -11,17 +11,17 @@
 	</head>
 	<body onload="pageSetup()">
     <header>
-        <section id="title-hero" class="hero is-primary">
+        <section id="title-hero" class="hero is-primary ">
             <div class="hero-body">
-                <div class="level" dir="rtl">
-                    <div class="level-item mx-6">
-                        <h1 lang="ar" class="title is-size-1-desktop">
-                            رومنة اللغة العربية ALA-LC
+                <div class="columns " dir="rtl" >
+                    <div class="column">
+                        <h1 lang="ar" class="title is-size-1-desktop is-size-4-mobile">
+                            <span class="ar-text">رومنة اللغة العربية</span> ALA-LC
                         </h1>
                     </div>
                     </h2> <br>
-                    <div class="level-item mx-6" style="text-align: left;">
-                        <h1 class="title is-size-1-desktop">
+                    <div class="column" style="text-align: left;">
+                        <h1 class="title is-size-1-desktop is-size-4-mobile">
                             Arabic Romanization ALA-LC
                         </h1>
                     </div>
@@ -55,23 +55,20 @@
         <section id="input-form" class="columns" dir="rtl">
             <div class="column">
                 <textarea class="textarea" id="input-text" name="input_field" dir="rtl" placeholder="ادخل النص العربي هنا - Input Arabic Text" required="" type="text" value=""></textarea> 
-                <div class="notification is-small" dir="ltr">
-                    Example 1: <a onclick="fillExample('اعطني الناي وغني')">اعطني الناي وغني</a>
-                    <br>
-                    Example 2: <a onclick="fillExample('اعطِنِي الناي وغني')">اعطِنِي الناي وغني</a>
-                </div>
             </div>                
-            <div class="column">
+            <div class="column is-one-fifth">
                 <div class="buttons is-centered">
-                    <div onclick="romanize()" type="button" id="romanize-button" class="button is-info is-medium">
-                        <span class="icon-text">
-                            <span>رَومِن</span><br>
+                    <div onclick="romanize()" type="button" id="romanize-button" class="button is-info is-medium is-centered is-fullwidth">
+                        <span class="icon-text" >
+                            <span style="font-size: 120%;">رَومِن</span>
                             <span class="icon">
+                                <i style='margin-right:2.7em;' class="fas fa-angle-double-left"></i>
+                            </span>
+                            <br>
+                            <span>Romanize</span>
+                            <span style='margin-right:1.25em;' class="icon">
                                 <i class="fas fa-angle-double-left"></i>
-                            </span><span class="icon">
-                                <i class="fas fa-angle-double-left"></i>
-                            </span><br>
-                            <span>Romanize</span><br>
+                            </span>
                       </span>
                     </div>
                 </div>     
@@ -82,8 +79,8 @@
         </section>
             
         <section id="input-buttons" class="columns is-centered is-vcentered">
-            <dev class="column is-narrow">
-                <table class="table">
+            <dev class="column is-narrow keyboard">
+                <table class="table is-fullwidth">
                     <tbody>
                         <tr>
                             <td>ى</td>
@@ -128,6 +125,14 @@
                 </table>
             </dev>
         </section>
+        <div class="container">
+        <div id="examples" class="notification is-small" style="text-align: center;" dir="ltr">
+            Try this example: 
+        
+                <a onclick="fillExample('جوهري، طنطاوي. \n جَمهَرَة الشعر والتعريب.\n وهي، جُملَةْ قطع من النظم لمشهوري شعراء الانجليز، كساها حُلَّةْ الشعر العربي')">جوهري، طنطاوي. جَمهَرَة الشعر والتعريب. وهي، جُملَةْ قطع من النظم لمشهوري شعراء الانجليز، كساها حُلَّةْ الشعر العربي</a>
+        
+        </div>
+    </div>
     </main>
     <footer class="footer">
         

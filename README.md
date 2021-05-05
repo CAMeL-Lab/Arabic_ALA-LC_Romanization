@@ -18,6 +18,10 @@ http://romanize-arabic.camel-lab.com/
 
 An online demo of our MLE Simple model 
 
+## Data
+
+You can download the dataset from [project releases](https://github.com/CAMeL-Lab/Arabic_ALA-LC_Romanization/releases/tag/v1.0)
+
 ## Authors
 
 - [Fadhl Eryani](https://github.com/fadhleryani/)

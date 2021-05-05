@@ -10,7 +10,7 @@ Source: Arabic Collections Online: http://hdl.handle.net/2333.1/m37pvs4b
 
 ## Publication
 
-- Fadhl Eryani & Nizar Habash.  [Automatic Romanization of Arabic Bibliographic Records.](https://www.aclweb.org/anthology/W14-1604.pdf) Proceedings of the Sixth Arabic Natural Language Processing Workshop. 2021.
+- Fadhl Eryani & Nizar Habash.  [Automatic Romanization of Arabic Bibliographic Records.](https://www.aclweb.org/anthology/2021.wanlp-1.23.pdf) Proceedings of the Sixth Arabic Natural Language Processing Workshop. 2021.
 
 ## Demo
 

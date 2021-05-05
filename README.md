@@ -20,7 +20,7 @@ An online demo of our MLE Simple model
 
 ## Data
 
-See `data.zip` in [project releases](https://github.com/CAMeL-Lab/Arabic_ALA-LC_Romanization/releases/tag/v1.0)
+The data and code used in Eryani & Habash (2021) are in the project's [first release](https://github.com/CAMeL-Lab/Arabic_ALA-LC_Romanization/releases/tag/v1.0)
 
 ## Authors
 

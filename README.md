@@ -20,7 +20,7 @@ An online demo of our MLE Simple model
 
 ## Data
 
-Access data.zip in [project releases](https://github.com/CAMeL-Lab/Arabic_ALA-LC_Romanization/releases/tag/v1.0)
+See `data.zip` in [project releases](https://github.com/CAMeL-Lab/Arabic_ALA-LC_Romanization/releases/tag/v1.0)
 
 ## Authors
 

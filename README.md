@@ -1,3 +1,4 @@
+
 # Arabic ALA-LC Romanization Tool
 
 A tool and dataset for the automatic Romanization of Arabic text in the ALA-LC Romanization standard.
@@ -9,7 +10,7 @@ Source: Arabic Collections Online: http://hdl.handle.net/2333.1/m37pvs4b
 
 ## Publication
 
-- Eryani, Fadhl & Nizar Habash.  [Automatic Romanization of Arabic Bibliographic Records.](https://arxiv.org/pdf/2103.07199.pdf) Proceedings of the Sixth Arabic Natural Language Processing Workshop. 2021 (pre-print).
+- Fadhl Eryani & Nizar Habash.  [Automatic Romanization of Arabic Bibliographic Records.](https://www.aclweb.org/anthology/W14-1604.pdf) Proceedings of the Sixth Arabic Natural Language Processing Workshop. 2021.
 
 ## Demo
 

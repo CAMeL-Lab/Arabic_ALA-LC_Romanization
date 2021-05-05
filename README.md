@@ -16,11 +16,11 @@ Source: Arabic Collections Online: http://hdl.handle.net/2333.1/m37pvs4b
 
 http://romanize-arabic.camel-lab.com/
 
-An online demo of our MLE Simple model 
+An online demo of our MLE Simple model.
 
 ## Data
 
-The data and code used in Eryani & Habash (2021) are in the project's [first release](https://github.com/CAMeL-Lab/Arabic_ALA-LC_Romanization/releases/tag/v1.0)
+Check out the [first release](https://github.com/CAMeL-Lab/Arabic_ALA-LC_Romanization/releases/tag/v1.0).
 
 ## Authors
 

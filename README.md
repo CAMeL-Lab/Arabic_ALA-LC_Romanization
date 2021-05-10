@@ -16,7 +16,7 @@ Source: Arabic Collections Online: http://hdl.handle.net/2333.1/m37pvs4b
 
 http://romanize-arabic.camel-lab.com/
 
-An online demo of our MLE Simple model.
+This demo is based on the “MLE Simple” model described in Eryani & Habash (2021), with slight modifications.  This model, selected for its speed, uses a large corpus of training data to calculate the most frequent Romanization given a certain Arabic input. The system achieves 90% accuracy (ignoring capitalization errors) and 84% exact match accuracy. In out-of-vocabulary scenarios, about 3% of the words, the system falls back on a simple character transliteration technique that Romanizes the input as is, without guessing unmarked vowels or splitting proclitics.  
 
 ## Data
 

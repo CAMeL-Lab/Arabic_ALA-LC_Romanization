@@ -87,6 +87,7 @@ h1 {
     background-color:#604245;
 }
 
+<<<<<<< HEAD
 #arabic-intro-text {
     font-size: 88%;
 }
@@ -94,4 +95,12 @@ h1 {
 #english-intro-text {
     font-size: 84%;
 
+=======
+#english-intro-text {
+    font-size: 84%;
+}
+
+#arabic-intro-text {
+    font-size: 88%;
+>>>>>>> 62abf06cee527972b43c4126ff4447a65a541611
 }

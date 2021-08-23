@@ -5,5 +5,5 @@ lxml==4.6.2
 pipdeptree==2.0.0
 pymarc==4.0.0
 repackage==0.7.3
-setuptools==52.0.0.post20210125
+setuptools==52.0.0
 wheel==0.36.2

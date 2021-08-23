@@ -86,3 +86,12 @@ h1 {
 .table, #footer, #romanize-button {
     background-color:#604245;
 }
+
+#arabic-intro-text {
+    font-size: 88%;
+}
+
+#english-intro-text {
+    font-size: 84%;
+
+}

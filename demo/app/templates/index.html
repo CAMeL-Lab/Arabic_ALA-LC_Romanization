@@ -34,20 +34,20 @@
 
         <div id="error-msg"></div> <!-- TODO: removing this will break script, so fix or remove from here and from script -->
 
-        <section class="level" id="intro-text" dir="rtl">
-            <div class="level-left">   
-                <div class="level-item">
+        <section class="columns" id="intro-text" dir="rtl">
+            <div class="column" id="arabic-intro-text">   
+                <!-- <div class="level-item"> -->
                     <div class="notification" dir="rtl">
                         أداة لرومنة الحروف العربية طبقًا لمعايير <b>جمعية المكتبات الأمريكية - مكتبة الكونجرس</b>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
-            <div class="level-right" dir="ltr">   
-                <div class="level-item">
-                    <div class="notification">
+            <div class="column" dir="ltr">   
+                <!-- <div class="level-item"> -->
+                    <div class="notification" id="english-intro-text">
                         A transliteration tool following the <b> American Library Association - Library of Congress</b>
                     </div>
-                </div>
+                <!-- </div> -->
                 
             </div>
         </section>
@@ -56,7 +56,7 @@
             <div class="column">
                 <textarea class="textarea" id="input-text" name="input_field" dir="rtl" placeholder="ادخل النص العربي هنا - Input Arabic Text" required="" type="text" value=""></textarea> 
             </div>                
-            <div class="column is-one-fifth">
+            <!-- <div class="column is-one-fifth">
                 <div class="buttons is-centered">
                     <div onclick="romanize()" type="button" id="romanize-button" class="button is-info is-medium is-centered is-fullwidth">
                         <span class="icon-text" >
@@ -72,7 +72,7 @@
                       </span>
                     </div>
                 </div>     
-            </div>      
+            </div>       -->
             <div class="column">
                 <textarea class="textarea" id="output-text" name="output_field" dir="ltr" type="text" value=""></textarea>                                               
             </div>
@@ -138,11 +138,12 @@
         
             <div class="container footer-message">
                 <div id="footer" class="notification is-info has-text-left">
-                    This demo is based on the “MLE Simple” model described in Eryani & Habash (2021), with slight modifications.  This model, selected for its speed, uses a large corpus of training data to calculate the most frequent Romanization given a certain Arabic input. The system achieves 90% accuracy (ignoring capitalization errors) and 84% exact match accuracy. In out-of-vocabulary scenarios, about 3% of the words, the system falls back on a simple character transliteration technique that Romanizes the input as is, without guessing unmarked vowels or splitting proclitics.  
+                    This demo follows the Library of Congress <a href="https://www.loc.gov/catdir/cpso/romanization/arabic.pdf" target="_blank">Arabic Romanization Table and Guidelines</a>, and is based on the “MLE Simple” model described in Eryani & Habash (2021), with slight modifications.  This model, selected for its speed, uses a large corpus of training data to calculate the most frequent Romanization given a certain Arabic input. The system achieves 90% accuracy (ignoring capitalization errors) and 84% exact match accuracy. In out-of-vocabulary scenarios, about 3% of the words, the system falls back on a simple character transliteration technique that Romanizes the input as is, without guessing unmarked vowels or splitting proclitics.  
 <br><br>
 Reference: Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic Bibliographic Records.</cite> In Proceedings of the Arabic Natural Language Processing Workshop. 2021.
                     </small> <a href="https://www.aclweb.org/anthology/2021.wanlp-1.23.pdf"
                         target="_blank">[PDF]</a> <a href="https://www.aclweb.org/anthology/2021.wanlp-1.23.bib" target="_blank">[BIB]</a> <a href="https://github.com/CAMeL-Lab/Arabic_ALA-LC_Romanization" target="_blank">[Github]</a>
+
                 </div>
             </div>
             <div class="container">
@@ -162,6 +163,22 @@ Reference: Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic B
     <script>
         var outputText = document.getElementById("output-text");
         var inputText = document.getElementById("input-text");
+        
+
+        inputText.addEventListener("paste", (event) => {
+            let paste = (event.clipboardData || window.clipboardData).getData('text');
+            
+            var cursorPosition = inputText.selectionEnd;
+            inputText.value = inputText.value.substring(0, inputText.selectionStart) + paste + inputText.value.substring(inputText.selectionEnd, inputText.value.length);
+
+            event.preventDefault();
+
+            romanize();
+            
+        });
+
+
+
         function clickLetter(c) {
             var cursorPosition = outputText.selectionEnd;
             outputText.focus(); // TODO: maintain current position instead of focusing on the end of text
@@ -175,8 +192,12 @@ Reference: Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic B
         }
     
 
+        
+
+
         function pageSetup() {
-            const node = document.getElementById("input-form");
+            const node = document.getElementById("input-form");            
+
             node.addEventListener("keyup", function (event) {
                 if (event.key === "Enter" || event.code === "Space") {
                     romanize();
@@ -184,6 +205,8 @@ Reference: Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic B
             });
         }
     
+
+
         function romanize() {
             console.log("romanizing...");
     

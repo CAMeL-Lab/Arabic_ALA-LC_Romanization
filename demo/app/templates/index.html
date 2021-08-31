@@ -162,8 +162,8 @@ Reference: Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic B
             // Make a new timeout set to go off in 1000ms (1 second)
             timeout = setTimeout(function () {
                 console.log('Input Value:', inputText.value);
-                loader.innerHTML = "";
                 romanize();
+                loader.innerHTML = "";
 
             }, 1000);
         });

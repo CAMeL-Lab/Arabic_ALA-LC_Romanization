@@ -32,7 +32,6 @@
     
     <main class="mx-6">
 
-        <div id="error-msg"></div> <!-- TODO: removing this will break script, so fix or remove from here and from script -->
 
         <section class="columns" id="intro-text" dir="rtl">
             <div class="column" id="arabic-intro-text">   
@@ -51,8 +50,11 @@
             <div class="column">
                 <textarea class="textarea" id="input-text" name="input_field" dir="rtl" placeholder="ادخل النص العربي هنا - Input Arabic Text" required="" type="text" value=""></textarea> 
             </div>                
-         
+            
+            <div class="column is-narrow" id="loader"></div>
+
             <div class="column">
+                <div id="error-msg" dir="ltr" style="color:red" ></div>
                 <textarea class="textarea" id="output-text" name="output_field" dir="ltr" type="text" value=""></textarea>                                               
             </div>
         </section>
@@ -144,16 +146,26 @@ Reference: Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic B
         var inputText = document.getElementById("input-text");
         
 
-        inputText.addEventListener("paste", (event) => {
-            let paste = (event.clipboardData || window.clipboardData).getData('text');
-            
-            var cursorPosition = inputText.selectionEnd;
-            inputText.value = inputText.value.substring(0, inputText.selectionStart) + paste + inputText.value.substring(inputText.selectionEnd, inputText.value.length);
+        let loader = document.getElementById('loader');
 
-            event.preventDefault();
+        // Init a timeout variable to be used below
+        let timeout = null;
 
-            romanize();
-            
+        // Listen for keystroke events
+        inputText.addEventListener('keyup', function (e) {
+            // Clear the timeout if it has already been set.
+            // This will prevent the previous task from executing
+            // if it has been less than <MILLISECONDS>
+            clearTimeout(timeout);
+            loader.innerHTML = '<div class="col-3"><div class="snippet" data-title=".dot-windmill"><div class="stage"><div class="dot-windmill"></div></div></div></div>';
+
+            // Make a new timeout set to go off in 1000ms (1 second)
+            timeout = setTimeout(function () {
+                console.log('Input Value:', inputText.value);
+                loader.innerHTML = "";
+                romanize();
+
+            }, 1000);
         });
 
 
@@ -173,14 +185,10 @@ Reference: Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic B
 
         function pageSetup() {
             const node = document.getElementById("input-form");            
-
-            node.addEventListener("keyup", function (event) {
-                if (event.key === "Enter" || event.code === "Space") {
-                    romanize();
-                }
-            });
         }
     
+
+
 
         function romanize() {
             console.log("romanizing...");

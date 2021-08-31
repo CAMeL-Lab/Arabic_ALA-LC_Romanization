@@ -162,7 +162,7 @@ Reference: Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic B
             // Make a new timeout set to go off in 1000ms (1 second)
             timeout = setTimeout(function () {
                 console.log('Input Value:', inputText.value);
-                romanize();
+                await romanize();
                 loader.innerHTML = "";
 
             }, 1000);
@@ -179,7 +179,13 @@ Reference: Fadhl Eryani & Nizar Habash. <cite>Automatic Romanization of Arabic B
 
         function fillExample(c) {
             inputText.value = c;
-            romanize();
+            loader.innerHTML = '<div class="col-3"><div class="snippet" data-title=".dot-windmill"><div class="stage"><div class="dot-windmill"></div></div></div></div>';
+            timeout = setTimeout(function () {
+                console.log('Input Value:', inputText.value);
+                await romanize();
+                loader.innerHTML = "";
+
+            }, 1000);
         }
     
 

@@ -1,6 +1,6 @@
-runtime: python
+runtime: python37
 instance_class: F1
-env: flex
+env: standard
 entrypoint: gunicorn -b :$PORT main:app
 
 runtime_config:

@@ -1,9 +1,10 @@
-camel-tools==1.1.0
+camel-tools>=1.1.0
 funcy==1.15
 Jinja2==2.11.3
 lxml==4.6.3
 pipdeptree==2.0.0
-pymarc==4.0.0
-repackage==0.7.3
-setuptools==52.0.0
-wheel==0.36.2
+pymarc>=4.0.0
+transformers>=2.4.1
+repackage>=0.7.3
+setuptools>=52.0.0
+# wheel>=0.36.2

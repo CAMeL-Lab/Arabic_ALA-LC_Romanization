@@ -1,8 +1,8 @@
-/data/*
+# /data/*
 /data.zip
 /evaluation/*
 /MADAMIRA/*
-/models/*
+# /models/*
 /predictions_out/*
 /reports/*
 /seq2seq/*

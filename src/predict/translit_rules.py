@@ -8,7 +8,7 @@ import argparse
 import repackage
 repackage.up()
 from data.make_dataset import recompose, tokenize_skiphyph
-from madamira import analyse
+# from madamira import analyse
 
 project_dir = Path(__file__).resolve().parents[2]
 
